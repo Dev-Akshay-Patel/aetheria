@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-clash: 'Clash Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-cabinet: 'Cabinet Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-syne: 'Syne', sans-serif;
+    --font-serif: 'Instrument Serif', Georgia, serif;
+    --font-jakarta: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    --font-space: 'Space Grotesk', monospace, sans-serif;
+    --font-dm: 'DM Sans', -apple-system, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-clash);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    background-color: #070709;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+}
+
+/* Custom font helper classes */
+.font-clash {
+  font-family: var(--font-clash);
+}
+.font-cabinet {
+  font-family: var(--font-cabinet);
+}
+.font-syne {
+  font-family: var(--font-syne);
+}
+.font-serif-display {
+  font-family: var(--font-serif);
+}
+.font-jakarta {
+  font-family: var(--font-jakarta);
+}
+.font-space {
+  font-family: var(--font-space);
+}
+.font-dm {
+  font-family: var(--font-dm);
+}
+
+/* Hide scrollbar for clean lyrics viewport */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Subtle custom scrollbar when needed */
+.subtle-scrollbar::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+.subtle-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.subtle-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+}
+.subtle-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* GPU-Accelerated Hardware Mesh Keyframes (Low CPU & GPU usage) */
+@keyframes meshOrb1 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  33% {
+    transform: translate3d(12vw, -8vh, 0) scale(1.18);
+  }
+  66% {
+    transform: translate3d(-8vw, 10vh, 0) scale(0.92);
+  }
+}
+
+@keyframes meshOrb2 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  33% {
+    transform: translate3d(-14vw, 12vh, 0) scale(1.22);
+  }
+  66% {
+    transform: translate3d(10vw, -10vh, 0) scale(0.88);
+  }
+}
+
+@keyframes meshOrb3 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(8vw, 14vh, 0) scale(1.15);
+  }
+}
+
+.animate-mesh-float-1 {
+  animation: meshOrb1 26s ease-in-out infinite;
+}
+.animate-mesh-float-2 {
+  animation: meshOrb2 32s ease-in-out infinite;
+}
+.animate-mesh-float-3 {
+  animation: meshOrb3 28s ease-in-out infinite;
+}
+
+/* Glass & Vignette helpers */
+.mask-lyrics-fade {
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 14%,
+    black 84%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 14%,
+    black 84%,
+    transparent 100%
+  );
+}

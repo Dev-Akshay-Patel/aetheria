@@ -1,0 +1,6 @@
+{
+  "name": "Aetheria Lyrics & Music Player",
+  "description": "A minimal, premium Windows desktop Lyrics and Music Player built with Tauri 2.x and React featuring animated mesh atmosphere and synchronized LRC lyrics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
